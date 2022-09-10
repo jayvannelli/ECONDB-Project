@@ -1,0 +1,1 @@
+This project uses ECONDB to obtain user specified economic data for a wide array of countries and types of data. The user get's that data in a raw dataframe form and also a chart that used matplotlib.pyplot to create.
