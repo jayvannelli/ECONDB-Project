@@ -40,15 +40,6 @@ def get_available_country_indicators(country):
 
     return ticker_and_descriptions
 
-def save_all_country_indicators_to_csv():
-    for i in constants.country_abbreviations.keys():
-        country_indicators = get_available_country_indicators(i)
-        with open(f'data/{i}_indicators.csv', 'w') as csv_file:
-            writer = csv.writer(csv_file)
-            writer.writerow(['Indicator Name', 'Symbol'])
-            for key, val in country_indicators.items():
-                writer.writerow([key, val])
-
 def get_economic_data(full_indicator_symbol, return_df):
     req_url = ECONDB_BASE_URL + f"{full_indicator_symbol}/?format=json"
     req = requests.get(req_url).json()
